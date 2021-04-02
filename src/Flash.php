@@ -25,7 +25,7 @@ class Flash
     {
         $flashedMessageProperties = $this->session->get('flash_message');
 
-        if (!$flashedMessageProperties) {
+        if (! $flashedMessageProperties) {
             return null;
         }
 
