@@ -4,7 +4,6 @@ namespace Combindma\Flash\Tests;
 
 use Combindma\Flash\Flash;
 use Combindma\Flash\Message;
-use Orchestra\Testbench\TestCase;
 
 class FlashTest extends TestCase
 {
