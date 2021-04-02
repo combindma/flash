@@ -3,7 +3,6 @@
 
 namespace Combindma\Flash;
 
-
 class Message
 {
     public string $message;

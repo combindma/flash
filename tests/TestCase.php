@@ -2,9 +2,9 @@
 
 namespace Combindma\Flash\Tests;
 
+use Combindma\Flash\FlashServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Combindma\Flash\FlashServiceProvider;
 
 class TestCase extends Orchestra
 {
