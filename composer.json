@@ -1,42 +1,44 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "combindma/flash",
+    "description": "Easy Flash Messages for a Laravel App",
     "keywords": [
-        ":vendor_name",
+        "combind",
         "laravel",
-        "package_slug"
+        "flash"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/combindma/flash",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Combind",
+            "email": "hello@combind.ma",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.0",
         "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.0"
+        "illuminate/session": "^8.0"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-latest",
         "brianium/paratest": "^6.2",
         "nunomaduro/collision": "^5.3",
         "orchestra/testbench": "^6.15",
         "phpunit/phpunit": "^9.3",
-        "spatie/laravel-ray": "^1.9",
         "vimeo/psalm": "^4.4"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
-        }
+            "Combindma\\Flash\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Combindma\\Flash\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,16 +48,6 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
-            }
-        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

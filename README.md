@@ -1,21 +1,21 @@
-# :package_description
+# Easy Flash Messages for a Laravel App
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/vendor_slug/package_slug.svg?style=flat-square)](https://packagist.org/packages/vendor_slug/package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vendor_slug/package_slug/run-tests?label=tests)](https://github.com/vendor_slug/package_slug/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/vendor_slug/package_slug/Check%20&%20fix%20styling?label=code%20style)](https://github.com/vendor_slug/package_slug/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/vendor_slug/package_slug.svg?style=flat-square)](https://packagist.org/packages/vendor_slug/package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/combindma/flash.svg?style=flat-square)](https://packagist.org/packages/combindma/flash)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/combindma/flash/run-tests?label=tests)](https://github.com/combindma/flash/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/combindma/flash/Check%20&%20fix%20styling?label=code%20style)](https://github.com/combindma/flash/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/combindma/flash.svg?style=flat-square)](https://packagist.org/packages/combindma/flash)
 
-[](delete) 1) manually replace `:author_name, :author_username, auhor@domain.com, :vendor_name, vendor_slug, Vendor Name, :package_name, package_slug, skeleton, Skeleton, :package_description` with their correct values
-[](delete) in `CHANGELOG.md, LICENSE.md, README.md, ExampleTest.php, ModelFactory.php, Skeleton.php, SkeletonCommand.php, SkeletonFacade.php, SkeletonServiceProvider.php, TestCase.php, composer.json, create_skeleton_table.php.stub`
-[](delete) and delete `configure-skeleton.sh`
+[](delete) 1) manually replace `Combind, combindma, auhor@domain.com, combindma, combindma, Vendor Name, flash, flash, flash, Flash, Easy Flash Messages for a Laravel App` with their correct values
+[](delete) in `CHANGELOG.md, LICENSE.md, README.md, ExampleTest.php, ModelFactory.php, Flash.php, FlashCommand.php, FlashFacade.php, FlashServiceProvider.php, TestCase.php, composer.json, create_flash_table.php.stub`
+[](delete) and delete `configure-flash.sh`
 
-[](delete) 2) You can also run `./configure-skeleton.sh` to do this automatically.
+[](delete) 2) You can also run `./configure-flash.sh` to do this automatically.
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/package-skeleton-laravel.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/package-skeleton-laravel)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/package-flash-laravel.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/package-flash-laravel)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -26,19 +26,19 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require vendor_slug/package_slug
+composer require combindma/flash
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="VendorName\Skeleton\SkeletonServiceProvider" --tag="package_slug-migrations"
+php artisan vendor:publish --provider="Combindma\Flash\FlashServiceProvider" --tag="flash-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="VendorName\Skeleton\SkeletonServiceProvider" --tag="package_slug-config"
+php artisan vendor:publish --provider="Combindma\Flash\FlashServiceProvider" --tag="flash-config"
 ```
 
 This is the contents of the published config file:
@@ -51,8 +51,8 @@ return [
 ## Usage
 
 ```php
-$skeleton = new VendorName\Skeleton();
-echo $skeleton->echoPhrase('Hello, Spatie!');
+$flash = new Combindma\Flash();
+echo $flash->echoPhrase('Hello, Spatie!');
 ```
 
 ## Testing
@@ -75,7 +75,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Combind](https://github.com/combindma)
 - [All Contributors](../../contributors)
 
 ## License
