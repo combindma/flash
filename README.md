@@ -1,8 +1,8 @@
 # Easy Flash Messages for a Laravel App
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/combindma/flash.svg?style=flat-square)](https://packagist.org/packages/combindma/flash)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/combindma/flash/run-tests?label=tests)](https://github.com/combindma/flash/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/combindma/flash/Check%20&%20fix%20styling?label=code%20style)](https://github.com/combindma/flash/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/combindma/flash/run-tests?branch=main&label=tests&style=flat-square)](https://github.com/combindma/flash/actions?query=workflow%3ATests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/combindma/flash/Check%20&%20fix%20styling?branch=main&label=code%20style&style=flat-square)](https://github.com/combindma/flash/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/combindma/flash.svg?style=flat-square)](https://packagist.org/packages/combindma/flash)
 
 ## Installation
@@ -44,10 +44,6 @@ In your view you can do this:
 ```bash
 composer test
 ```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 

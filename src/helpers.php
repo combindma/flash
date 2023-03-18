@@ -1,16 +1,14 @@
 <?php
 
-
 use Combindma\Flash\Flash;
 use Combindma\Flash\Message;
 
 /**
- * @param string $text
- * @param string|array $class
+ * @param  null  $class
  */
 function flash(string $text = null, $class = null): Flash
 {
-    /** @var \Combindma\Flash\Flash $flash */
+    /** @var Flash $flash */
     $flash = app(Flash::class);
 
     if (is_null($text)) {

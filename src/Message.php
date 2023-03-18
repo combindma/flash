@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Combindma\Flash;
 
 class Message

@@ -1,110 +1,74 @@
 <?php
 
-namespace Combindma\Flash\Tests;
-
 use Combindma\Flash\Flash;
 use Combindma\Flash\Message;
 
-class FlashTest extends TestCase
-{
-    /** @test */
-    public function it_can_set_a_simple_flash_message()
-    {
-        flash('my message');
+it('can set a simple flash message', function () {
+    flash('my message');
+    expect(flash()->message)->toBe('my message');
+});
 
-        $this->assertEquals('my message', flash()->message);
-    }
+it('can set a flash message with a class', function () {
+    flash('my message', 'my-class');
+    expect(flash()->message)->toBe('my message')
+        ->and(flash()->class)->toBe('my-class');
+});
 
-    /** @test */
-    public function it_can_set_a_flash_message_with_a_class()
-    {
-        flash('my message', 'my-class');
+it('can set a flash message with multiple classes', function () {
+    flash('my message', ['my-class', 'another-class']);
+    expect(flash()->message)->toBe('my message')
+        ->and(flash()->class)->toBe('my-class another-class');
+});
 
-        $this->assertEquals('my message', flash()->message);
-        $this->assertEquals('my-class', flash()->class);
-    }
+it('can make the flash function macroable', function () {
+    Flash::macro('info', function (string $message) {
+        $this->flash(new Message($message, 'my-info-class'));
+    });
+    flash()->info('my message');
+    expect(flash()->message)->toBe('my message')
+        ->and(flash()->class)->toBe('my-info-class');
+});
 
-    /** @test */
-    public function it_can_set_a_flash_message_with_multiple_classes()
-    {
-        flash('my message', ['my-class', 'another-class']);
+it('can add multiple methods in one go', function () {
+    Flash::levels([
+        'warning' => 'alert-warning',
+        'error' => 'alert-error',
+    ]);
+    flash()->warning('my warning');
+    expect(flash()->message)->toBe('my warning')
+        ->and(flash()->class)->toBe('alert-warning');
+    flash()->error('my error');
+    expect(flash()->message)->toBe('my error')
+        ->and(flash()->class)->toBe('alert-error');
+});
 
-        $this->assertEquals('my message', flash()->message);
-        $this->assertEquals('my-class another-class', flash()->class);
-    }
+it('can get the flash level when the level is registered using the macro', function () {
+    Flash::macro('info', function (string $message) {
+        $this->flash(new Message($message, 'my-info-class', 'info'));
+    });
+    flash()->info('my info message');
+    expect(flash()->level)->toBe('info');
+});
 
-    /** @test */
-    public function the_flash_function_is_macroable()
-    {
-        Flash::macro('info', function (string $message) {
-            return $this->flash(new Message($message, 'my-info-class'));
-        });
+it('can get the flash level when levels are registering in one go', function () {
+    Flash::levels([
+        'warning' => 'alert-warning',
+        'error' => 'alert-error',
+    ]);
+    flash()->error('my error');
+    expect(flash()->level)->toBe('error');
+});
 
-        flash()->info('my message');
+it('can pass a class name that is registered as method it will call that method', function () {
+    flash('my message', 'custom');
+    expect(flash()->class)->toBe('custom');
+    Flash::levels([
+        'custom' => 'overridden-custom',
+    ]);
+    flash('my message', 'custom');
+    expect(flash()->class)->toBe('overridden-custom');
+});
 
-        $this->assertEquals('my message', flash()->message);
-        $this->assertEquals('my-info-class', flash()->class);
-    }
-
-    /** @test */
-    public function multiple_methods_can_be_added_in_one_go()
-    {
-        Flash::levels([
-            'warning' => 'alert-warning',
-            'error' => 'alert-error',
-        ]);
-
-        flash()->warning('my warning');
-        $this->assertEquals('my warning', flash()->message);
-        $this->assertEquals('alert-warning', flash()->class);
-
-        flash()->error('my error');
-        $this->assertEquals('my error', flash()->message);
-        $this->assertEquals('alert-error', flash()->class);
-    }
-
-    /** @test */
-    public function it_can_get_the_flash_level_when_the_level_is_registered_using_the_macro()
-    {
-        Flash::macro('info', function (string $message) {
-            return $this->flash(new Message($message, 'my-info-class', 'info'));
-        });
-
-        flash()->info('my info message');
-
-        $this->assertEquals('info', flash()->level);
-    }
-
-    /** @test */
-    public function it_can_get_the_flash_level_when_levels_are_registering_in_one_go()
-    {
-        Flash::levels([
-            'warning' => 'alert-warning',
-            'error' => 'alert-error',
-        ]);
-
-        flash()->error('my error');
-
-        $this->assertEquals('error', flash()->level);
-    }
-
-    /** @test */
-    public function when_passing_a_class_name_that_is_registered_as_method_it_will_call_that_method()
-    {
-        flash('my message', 'custom');
-        $this->assertEquals('custom', flash()->class);
-
-        Flash::levels([
-            'custom' => 'overridden-custom',
-        ]);
-
-        flash('my message', 'custom');
-        $this->assertEquals('overridden-custom', flash()->class);
-    }
-
-    /** @test */
-    public function empty_flash_message_returns_null()
-    {
-        $this->assertNull(flash()->message);
-    }
-}
+it('can empty flash message and returns null', function () {
+    expect(flash()->message)->toBeNull();
+});
