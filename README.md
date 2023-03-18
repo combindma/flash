@@ -1,8 +1,8 @@
 # Easy Flash Messages for a Laravel App
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/combindma/flash.svg?style=flat-square)](https://packagist.org/packages/combindma/flash)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/combindma/flash/run-tests?branch=main&label=tests&style=flat-square)](https://github.com/combindma/flash/actions?query=workflow%3ATests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/combindma/flash/Check%20&%20fix%20styling?branch=main&label=code%20style&style=flat-square)](https://github.com/combindma/flash/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/combindma/flash/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/combindma/flash/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/combindma/flash/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/combindma/flash/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/combindma/flash.svg?style=flat-square)](https://packagist.org/packages/combindma/flash)
 
 ## Installation
