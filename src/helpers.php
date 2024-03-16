@@ -6,7 +6,7 @@ use Combindma\Flash\Message;
 /**
  * @param  null  $class
  */
-function flash(string $text = null, $class = null): Flash
+function flash(?string $text = null, $class = null): Flash
 {
     /** @var Flash $flash */
     $flash = app(Flash::class);
